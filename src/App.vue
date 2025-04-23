@@ -2,19 +2,19 @@
 import Logo from './components/RoyalLogo.vue'
 const events = [
   {
-    image: '/src/assets/img/boney_james.jpg',
+    image: '/boney_james.jpg',
     alt: 'Boney James',
     date: 'June 26, 2025',
     ticket:
       'https://www.tixr.com/groups/ampballantyne/events/boney-james-royal-summer-jazz-series-139371',
   },
   {
-    image: '/src/assets/img/najee__regina_belle.jpg',
+    image: '/najee__regina_belle.jpg',
     alt: 'Najee & Regina Belle',
     date: 'July 10, 2025',
   },
   {
-    image: '/src/assets/img/will_downing.jpg',
+    image: '/will_downing.jpg',
     alt: 'Will Downing',
     date: 'July 24, 2025',
   },
