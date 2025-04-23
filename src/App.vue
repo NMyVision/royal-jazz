@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import Logo from './components/RoyalLogo.vue'
 const events = [
   {
