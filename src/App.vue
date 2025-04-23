@@ -2,15 +2,21 @@
 import Logo from './components/RoyalLogo.vue'
 const events = [
   {
-    image: 'boney_james.jpg',
+    image: '/src/assets/img/boney_james.jpg',
+    alt: 'Boney James',
+    date: 'June 26, 2025',
     ticket:
       'https://www.tixr.com/groups/ampballantyne/events/boney-james-royal-summer-jazz-series-139371',
   },
   {
-    image: 'najee__regina_belle.jpg',
+    image: '/src/assets/img/najee__regina_belle.jpg',
+    alt: 'Najee & Regina Belle',
+    date: 'July 10, 2025',
   },
   {
-    image: 'will_downing.jpg',
+    image: '/src/assets/img/will_downing.jpg',
+    alt: 'Will Downing',
+    date: 'July 24, 2025',
   },
 ]
 //  \assets\img\najee__regina_belle.jpg
@@ -24,9 +30,9 @@ const events = [
         <Logo class="h-[600px] fill-white" />
       </div>
       <div class="md:flex items-center gap-4 py-10">
-        <template v-for="{ image } in events" :key="image">
+        <template v-for="{ image, alt } in events" :key="image">
           <a class="block" href="https://www.ampballantyne.com">
-            <img :src="`/src/assets/img/${image}`" alt="Image" height="auto" width="675px" />
+            <img :src="image" :alt="alt" height="auto" width="675px" />
           </a>
         </template>
       </div>
@@ -57,7 +63,6 @@ const events = [
 </template>
 
 <style>
-
 .mapouter {
   position: relative;
   text-align: right;
