@@ -28,7 +28,7 @@ const events = [
         <template v-for="{ image } in events">
           <a class="block" href="https://www.ampballantyne.com">
             <img
-              :src="`/_nuxt/assets/img/${image}`"
+              :src="`/assets/img/${image}`"
               alt="Image"
               height="auto"
               width="675px"
@@ -67,7 +67,7 @@ const events = [
 <style>
 html {
   background-color: black;
-  background-image: url("/_nuxt/assets/img/black concrete.jpg");
+  background-image: url("/img/black concrete.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -75,8 +75,7 @@ html {
   background-blend-mode: multiply;
   background-color: aliceblue;
 }
-.wrapper {
-}
+
 .mapouter {
   position: relative;
   text-align: right;
