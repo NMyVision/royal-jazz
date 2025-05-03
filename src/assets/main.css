@@ -1,12 +1,8 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 html {
   background-color: black;
-  background-image: url('/black-concrete.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-blend-mode: multiply;
-  background-color: aliceblue;
+}
+@theme {
+
 }
