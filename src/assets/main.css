@@ -1,6 +1,10 @@
 @import "tailwindcss";
 
-html {
+
+@theme {
+  --font-display: "Inter", "sans-serif";
+}
+/* html {
   background-color: black;
   background-image: url('/black-concrete.jpg');
   background-size: cover;
@@ -9,4 +13,4 @@ html {
   background-attachment: fixed;
   background-blend-mode: multiply;
   background-color: aliceblue;
-}
+} */
