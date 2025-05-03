@@ -85,9 +85,9 @@ const activePoster = computed(() => {
         <div :class="['h-full flex bg-gradient-to-b to-black', activePoster.color]"></div>
       </div>
 
-      <div class="grid grid-rows-[6rem_1fr_5rem_2px] h-screen">
+      <div class="grid grid-rows-[auto_1fr_5rem_2px] h-screen">
         <div class="flex items-center justify-center w-full">
-          <Logo class="h-20 sm:h-[200px] fill-white" />
+          <Logo class="h-20 sm:h-[200px] sm:pt-4 fill-white" />
         </div>
         <div>
           <div class="hidden sm:grid grid-cols-4 overflow-clip flex-1 h-full">
