@@ -48,7 +48,7 @@ const posters = [
 
 const sponsors = [
   {
-    image: '/sponsors/middle_c_jazz_logos_med_color.png',
+    image: '/sponsors/middle_c_jazz_logo_square_full-07.png',
     label: 'Middle C Jazz',
     type: 'supporter',
     css: ''
