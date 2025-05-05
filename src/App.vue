@@ -177,7 +177,7 @@ const activePoster = computed(() => {
           >Buy Tickets</a
         >
       </div>
-      <div class="flex flex-col gap-10 *:border *:border-red-300">
+      <div class="flex flex-col gap-10 *:border *:border-purple-950">
         <article>
           <h3 class="font-title text-white text-9xl text-center">Sponsors</h3>
 
@@ -187,7 +187,7 @@ const activePoster = computed(() => {
               :key="item.label"
             >
               <div>
-                <img :src="item.image" :alt="item.label" class="max-w-[48rem]" />
+                <img :src="item.image" :alt="item.label" class="max-w-[48rem] w-full" />
               </div>
             </template>
           </div>
@@ -195,7 +195,7 @@ const activePoster = computed(() => {
         <article>
           <h3 class="font-title text-white text-9xl text-center">Partners</h3>
 
-          <div class="flex items-center mt-10">
+          <div class="flex items-center mt-10 flex-wrap justify-center">
             <template
               v-for="item in sponsors.filter((x) => x.type !== 'sponsor')"
               :key="item.label"
