@@ -1,39 +1,5 @@
 <script setup lang="ts">
 import Logo from './components/RoyalLogo.vue'
-const events = [
-  {
-    image: '/boney_james.jpg',
-    alt: 'Boney James',
-    date: '6.26.25',
-    time: 'Thursday 7:30 PM',
-    ticket:
-      'https://www.tixr.com/groups/ampballantyne/events/boney-james-royal-summer-jazz-series-139371',
-  },
-  {
-    image: '/najee__regina_belle.jpg',
-    alt: 'Najee & Regina Belle',
-    date: '7.10.25',
-    time: 'Thursday 7:30 PM',
-    ticket:
-      'https://www.tixr.com/groups/ampballantyne/events/najee-and-regina-belle-royal-summer-jazz-series-142329',
-  },
-  {
-    image: '/will_downing.jpg',
-    alt: 'Will Downing',
-    date: '7.24.25',
-    time: 'Thursday 7:30 PM',
-    ticket:
-      'https://www.tixr.com/groups/ampballantyne/events/will-downing-royal-summer-jazz-series-142330',
-  },
-  {
-    image: '/koz.jpg',
-    alt: 'Dave KOZ & Friends',
-    date: '8.7.25',
-    time: 'Thursday 7:30 PM',
-    ticket:
-      'https://www.tixr.com/groups/ampballantyne/events/dave-koz-and-friends-summer-horns-2025-the-ultimate-summer-part-royal-summer-jazz-series-142333',
-  },
-]
 
 const activePosterIndex = ref(0)
 
@@ -41,26 +7,63 @@ const posters = [
   {
     label: 'Boney James',
     date: '6.26.2025',
+    time: 'Thursday 7:30 PM',
     image: '/boney_james-alpha.png',
-    color: 'from-emerald-950/90',
+    flyer: '/boney_james.jpg',
+    color: 'from-emerald-950/90 hover:to-emerald-900/5',
+    ticket:
+      'https://www.tixr.com/groups/ampballantyne/events/boney-james-royal-summer-jazz-series-139371',
   },
   {
     label: 'Najee & Regina Belle',
     date: '7.10.2025',
+    time: 'Thursday 7:30 PM',
     image: '/najee__regina_belle-alpha.png',
-    color: 'from-cyan-950/90',
+    flyer: '/najee__regina_belle.jpg',
+    color: 'from-cyan-950/90 hover:to-cyan-900/5',
+    ticket:
+      'https://www.tixr.com/groups/ampballantyne/events/najee-and-regina-belle-royal-summer-jazz-series-142329',
   },
   {
     label: 'Will Downing',
     date: '7.24.2025',
+    time: 'Thursday 7:30 PM',
     image: '/will_downing-alpha.png',
-    color: 'from-rose-950/90',
+    flyer: '/will_downing.jpg',
+    color: 'from-rose-950/90 hover:to-rose-900/5',
+    ticket:
+      'https://www.tixr.com/groups/ampballantyne/events/will-downing-royal-summer-jazz-series-142330',
   },
   {
-    label: 'David Koz & Friends',
+    label: 'Dave Koz & Friends',
     date: '8.7.2025',
-    image: '/david_koz-alpha.png',
-    color: 'from-indigo-950/90',
+    time: 'Thursday 7:30 PM',
+    image: '/dave_koz-alpha.png',
+    flyer: '/dave_koz.png',
+    color: 'from-indigo-950/90 hover:to-indigo-900/5',
+    ticket:
+      'https://www.tixr.com/groups/ampballantyne/events/dave-koz-and-friends-summer-horns-2025-the-ultimate-summer-part-royal-summer-jazz-series-142333',
+  },
+]
+
+const sponsors = [
+  {
+    image: '/sponsors/middle_c_jazz_logos_med_color.png',
+    label: 'Middle C Jazz',
+    type: 'supporter',
+    css: ''
+  },
+  {
+    image: '/sponsors/On Stage Concerts Logo.jpg',
+    label: 'On Stage Concerts',
+    type: 'supporter',
+    css: 'invert-100'
+  },
+  {
+    image: '/sponsors/trucore orange labs logo.png',
+    label: 'Tru Core Laboratories',
+    type: 'sponsor',
+    css: ''
   },
 ]
 
@@ -108,7 +111,10 @@ const activePoster = computed(() => {
         <div class="grid grid-cols-4 items-center overflow-clip text-white justify-center">
           <template v-for="(item, index) in posters" :key="item.image">
             <button
-              :class="[item.color, 'bg-gradient-to-b to-black sm:text-base text-sm px-2 flex items-center justify-center h-full']"
+              :class="[
+                item.color,
+                'bg-gradient-to-b to-black sm:text-base text-sm px-2 flex items-center justify-center h-full',
+              ]"
               @click="activePosterIndex = index"
             >
               {{ item.label }}
@@ -117,7 +123,18 @@ const activePoster = computed(() => {
           </template>
         </div>
         <div class="">
-          <div :class="['bg-white/50 h-[2px] w-1/4 transition duration-300 ease-in-out', activePosterIndex === 1 ? 'translate-x-full' : activePosterIndex === 2 ?  'translate-x-[200%]' : activePosterIndex === 3 ?  'translate-x-[300%]' :'']"></div>
+          <div
+            :class="[
+              'bg-white/50 h-[2px] w-1/4 transition duration-300 ease-in-out',
+              activePosterIndex === 1
+                ? 'translate-x-full'
+                : activePosterIndex === 2
+                  ? 'translate-x-[200%]'
+                  : activePosterIndex === 3
+                    ? 'translate-x-[300%]'
+                    : '',
+            ]"
+          ></div>
         </div>
       </div>
 
@@ -144,7 +161,7 @@ const activePoster = computed(() => {
   <div class="bg-black/10">
     <section class="max-w-screen-xl mx-auto bg-black/80 px-4 sm:px-10">
       <div class="md:grid grid-cols-2 items-center gap-4 sm:gap-10 py-10">
-        <template v-for="{ image, alt, ticket } in events" :key="image">
+        <template v-for="{ flyer: image, label: alt, ticket } in posters" :key="image">
           <div class="overflow-clip">
             <a class="block" :href="ticket" target="_blank" rel="noopener">
               <img :src="image" :alt="alt" height="auto" width="675px" class="hover:scale-110" />
@@ -152,6 +169,7 @@ const activePoster = computed(() => {
           </div>
         </template>
       </div>
+
       <div class="p-10 text-center">
         <a
           class="inline-block border-white/50 border-2 bg-[#b46a20] text-[#f1ed74]/90 py-4 px-8 uppercase font-medium rounded-full"
@@ -159,20 +177,56 @@ const activePoster = computed(() => {
           >Buy Tickets</a
         >
       </div>
+      <div class="flex flex-col gap-10 *:border *:border-red-300">
+        <article>
+          <h3 class="font-title text-white text-9xl text-center">Sponsors</h3>
 
-      <div class="sm:p-10 relative w-full">
-        <div class="overflow-hidden !bg-transparent w-full h-400px">
-          <iframe
-            class="gmap_iframe"
-            width="100%"
-            frameborder="0"
-            scrolling="no"
-            marginheight="0"
-            marginwidth="0"
-            src="https://maps.google.com/maps?width=800&amp;height=400&amp;hl=en&amp;q=11115 upper ave&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
-          ></iframe
-          ><a href="https://embed-googlemap.com">embed google maps in website</a>
-        </div>
+          <div class="flex items-center justify-center">
+            <template
+              v-for="item in sponsors.filter((x) => x.type === 'sponsor')"
+              :key="item.label"
+            >
+              <div>
+                <img :src="item.image" :alt="item.label" class="max-w-[48rem]" />
+              </div>
+            </template>
+          </div>
+        </article>
+        <article>
+          <h3 class="font-title text-white text-9xl text-center">Partners</h3>
+
+          <div class="flex items-center mt-10">
+            <template
+              v-for="item in sponsors.filter((x) => x.type !== 'sponsor')"
+              :key="item.label"
+            >
+              <div>
+                <img
+                  :src="item.image"
+                  :alt="item.label"
+                  :class="['max-w-96', item.css]"
+                />
+              </div>
+            </template>
+          </div>
+        </article>
+        <article>
+          <h3 class="font-title text-white text-9xl text-center">Location</h3>
+          <div class="sm:p-10 relative w-full">
+            <div class="overflow-hidden !bg-transparent w-full h-400px">
+              <iframe
+                class="gmap_iframe"
+                width="100%"
+                frameborder="0"
+                scrolling="no"
+                marginheight="0"
+                marginwidth="0"
+                src="https://maps.google.com/maps?width=800&amp;height=400&amp;hl=en&amp;q=11115 upper ave&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+              ></iframe
+              ><a href="https://embed-googlemap.com">embed google maps in website</a>
+            </div>
+          </div>
+        </article>
       </div>
     </section>
   </div>
