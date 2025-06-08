@@ -48,22 +48,28 @@ const posters = [
 
 const sponsors = [
   {
+    image: '/sponsors/aloft.png',
+    label: 'Aloft Charlotte Ballantyne',
+    type: 'supporter',
+    css: 'invert-100',
+  },
+  {
     image: '/sponsors/middle_c_jazz_logo_square_full-07.png',
     label: 'Middle C Jazz',
     type: 'supporter',
-    css: ''
+    css: '',
   },
   {
     image: '/sponsors/On Stage Concerts Logo.jpg',
     label: 'On Stage Concerts',
     type: 'supporter',
-    css: 'invert-100'
+    css: 'invert-100',
   },
   {
     image: '/sponsors/trucore orange labs logo.png',
     label: 'Tru Core Laboratories',
     type: 'sponsor',
-    css: ''
+    css: '',
   },
 ]
 
@@ -181,14 +187,12 @@ const activePoster = computed(() => {
         <article>
           <h3 class="font-title text-white text-9xl text-center">Sponsors</h3>
 
-          <div class="flex items-center justify-center">
+          <div class="grid grid-cols-1 items-center justify-center">
             <template
               v-for="item in sponsors.filter((x) => x.type === 'sponsor')"
               :key="item.label"
             >
-              <div>
-                <img :src="item.image" :alt="item.label" class="max-w-[48rem] w-full" />
-              </div>
+              <img :src="item.image" :alt="item.label" :class="['max-w-4xl w-full mx-auto', item.css]" />
             </template>
           </div>
         </article>
@@ -201,11 +205,7 @@ const activePoster = computed(() => {
               :key="item.label"
             >
               <div>
-                <img
-                  :src="item.image"
-                  :alt="item.label"
-                  :class="['max-w-96', item.css]"
-                />
+                <img :src="item.image" :alt="item.label" :class="['max-w-96', item.css]" />
               </div>
             </template>
           </div>
