@@ -166,6 +166,8 @@ const activePoster = computed(() => {
 
   <div class="bg-black/10">
     <section class="max-w-screen-xl mx-auto bg-black/80 px-4 sm:px-10">
+
+
       <div class="md:grid grid-cols-2 items-center gap-4 sm:gap-10 py-10">
         <template v-for="{ flyer: image, label: alt, ticket } in posters" :key="image">
           <div class="overflow-clip">
@@ -183,6 +185,22 @@ const activePoster = computed(() => {
           >Buy Tickets</a
         >
       </div>
+ <a
+        class="group block text-white relative overflow-clip mb-10"
+        target="_blank"
+        href="https://www.marriott.com/event-reservations/reservation-link.mi?id=1749490723959&key=CORP&app=resvlink"
+      >
+        <img
+          src="/aloft-charlotte-ballantyne.jpg"
+          alt="Aloft Charlotte Ballantyne"
+          class="group-hover:scale-110 w-full mb-4 transition"
+        />
+        <div class="absolute bottom-0 inset-x-0 p-2 bg-gradient-to-b to-55% to-black/70 pt-10">
+
+          Book your corporate rate for Royal Summer Jazz Series<br />
+          at Aloft Charlotte Ballantyne
+        </div>
+      </a>
       <div class="flex flex-col gap-10 *:border *:border-purple-950">
         <article>
           <h3 class="font-title text-white text-9xl text-center">Sponsors</h3>
@@ -192,7 +210,11 @@ const activePoster = computed(() => {
               v-for="item in sponsors.filter((x) => x.type === 'sponsor')"
               :key="item.label"
             >
-              <img :src="item.image" :alt="item.label" :class="['max-w-4xl w-full mx-auto', item.css]" />
+              <img
+                :src="item.image"
+                :alt="item.label"
+                :class="['max-w-4xl w-full mx-auto', item.css]"
+              />
             </template>
           </div>
         </article>
