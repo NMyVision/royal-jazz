@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import Logo from './components/RoyalLogo.vue'
 
-const activePosterIndex = ref(0)
+const activePosterIndex = ref(1)
 
 const posters = [
   {
@@ -166,8 +166,6 @@ const activePoster = computed(() => {
 
   <div class="bg-black/10">
     <section class="max-w-screen-xl mx-auto bg-black/80 px-4 sm:px-10">
-
-
       <div class="md:grid grid-cols-2 items-center gap-4 sm:gap-10 py-10">
         <template v-for="{ flyer: image, label: alt, ticket } in posters" :key="image">
           <div class="overflow-clip">
@@ -185,7 +183,7 @@ const activePoster = computed(() => {
           >Buy Tickets</a
         >
       </div>
- <a
+      <a
         class="group block text-white relative overflow-clip mb-10"
         target="_blank"
         href="https://www.marriott.com/event-reservations/reservation-link.mi?id=1749490723959&key=CORP&app=resvlink"
@@ -196,7 +194,6 @@ const activePoster = computed(() => {
           class="group-hover:scale-110 w-full mb-4 transition"
         />
         <div class="absolute bottom-0 inset-x-0 p-2 bg-gradient-to-b to-55% to-black/70 pt-10">
-
           Book your corporate rate for Royal Summer Jazz Series<br />
           at Aloft Charlotte Ballantyne
         </div>
