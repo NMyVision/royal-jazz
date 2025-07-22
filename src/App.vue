@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import Logo from './components/RoyalLogo.vue'
 
-const activePosterIndex = ref(1)
+const activePosterIndex = ref(2)
 
 const posters = [
   {
@@ -9,7 +9,7 @@ const posters = [
     date: '6.26.2025',
     time: 'Thursday 7:30 PM',
     image: '/boney_james-alpha.png',
-    flyer: '/boney_james.jpg',
+    //flyer: '/boney_james.jpg',
     color: 'from-emerald-950/90 hover:to-emerald-900/5',
     ticket:
       'https://www.tixr.com/groups/ampballantyne/events/boney-james-royal-summer-jazz-series-139371',
@@ -19,20 +19,10 @@ const posters = [
     date: '7.10.2025',
     time: 'Thursday 7:30 PM',
     image: '/najee__regina_belle-alpha.png',
-    flyer: '/najee__regina_belle.jpg',
+    //flyer: '/najee__regina_belle.jpg',
     color: 'from-cyan-950/90 hover:to-cyan-900/5',
     ticket:
       'https://www.tixr.com/groups/ampballantyne/events/najee-and-regina-belle-royal-summer-jazz-series-142329',
-  },
-  {
-    label: 'Will Downing',
-    date: '7.24.2025',
-    time: 'Thursday 7:30 PM',
-    image: '/will_downing-alpha.png',
-    flyer: '/will_downing.jpg',
-    color: 'from-rose-950/90 hover:to-rose-900/5',
-    ticket:
-      'https://www.tixr.com/groups/ampballantyne/events/will-downing-royal-summer-jazz-series-142330',
   },
   {
     label: 'Dave Koz & Friends',
@@ -65,10 +55,16 @@ const sponsors = [
     type: 'supporter',
     css: 'invert-100',
   },
-  {
+    {
     image: '/sponsors/trucore orange labs logo.png',
     label: 'Tru Core Laboratories',
     type: 'sponsor',
+    css: '',
+  },
+  {
+    image: '/sponsors/new_york_life logo.png',
+    label: 'New York Life',
+    type: 'supporter',
     css: '',
   },
 ]
@@ -79,12 +75,12 @@ const activePoster = computed(() => {
 </script>
 
 <template>
-  <div class="relative">
+  <div class="relative clear-both">
     <div class="h-screen relative">
       <div
         class="absolute inset-0 bg-[url(/1.jpg)] bg-cover mix-blend-screen mask-b-from-30% mask-b-to-90% animate-pulse [animation-duration:10s] -z-10"
       ></div>
-      <div class="hidden absolute inset-0 sm:grid grid-cols-4 h-screen -z-20">
+      <div class="hidden absolute inset-0 sm:grid grid-cols-3 h-screen -z-20">
         <template v-for="item in posters" :key="item.image">
           <div :class="['h-full flex bg-gradient-to-b to-black transition-all', item.color]"></div>
         </template>
@@ -99,7 +95,7 @@ const activePoster = computed(() => {
           <Logo class="h-20 sm:h-[200px] sm:pt-4 fill-white" />
         </div>
         <div>
-          <div class="hidden sm:grid grid-cols-4 overflow-clip flex-1 h-full">
+          <div class="hidden sm:grid grid-cols-3 overflow-clip flex-1 h-full">
             <template v-for="item in posters" :key="item.image">
               <img
                 :src="item.image"
@@ -114,7 +110,7 @@ const activePoster = computed(() => {
             <img :src="activePoster.image" class="opacity-0" />
           </div>
         </div>
-        <div class="grid grid-cols-4 items-center overflow-clip text-white justify-center">
+        <div class="grid grid-cols-3 items-center overflow-clip text-white justify-center">
           <template v-for="(item, index) in posters" :key="item.image">
             <button
               :class="[
@@ -131,7 +127,7 @@ const activePoster = computed(() => {
         <div class="">
           <div
             :class="[
-              'bg-white/50 h-[2px] w-1/4 transition duration-300 ease-in-out',
+              'bg-white/50 h-[2px] w-1/3 transition duration-300 ease-in-out',
               activePosterIndex === 1
                 ? 'translate-x-full'
                 : activePosterIndex === 2
@@ -164,11 +160,12 @@ const activePoster = computed(() => {
     </div>
   </div>
 
-  <div class="bg-black/10">
+  <div class="bg-black/10 clear-both mt-40 border  ">
     <section class="max-w-screen-xl mx-auto bg-black/80 px-4 sm:px-10">
-      <div class="md:grid grid-cols-2 items-center gap-4 sm:gap-10 py-10">
-        <template v-for="{ flyer: image, label: alt, ticket } in posters" :key="image">
-          <div class="overflow-clip">
+      <div class="md:grid grid-cols-1 items-center gap-4 sm:gap-10 py-10">
+        <p class="text-center text-[#c39243] text-2xl">Join us for the last show of the series!</p>
+        <template v-for="{ flyer: image, label: alt, ticket } in posters.filter(x => x.flyer)" :key="image">
+          <div class="overflow-clip  mx-auto">
             <a class="block" :href="ticket" target="_blank" rel="noopener">
               <img :src="image" :alt="alt" height="auto" width="675px" class="hover:scale-110" />
             </a>
@@ -202,7 +199,7 @@ const activePoster = computed(() => {
         <article>
           <h3 class="font-title text-white text-9xl text-center">Sponsors</h3>
 
-          <div class="grid grid-cols-1 items-center justify-center">
+          <div class="grid grid-cols-1 gap-4 items-center justify-center">
             <template
               v-for="item in sponsors.filter((x) => x.type === 'sponsor')"
               :key="item.label"
@@ -218,7 +215,7 @@ const activePoster = computed(() => {
         <article>
           <h3 class="font-title text-white text-9xl text-center">Partners</h3>
 
-          <div class="flex items-center mt-10 flex-wrap justify-center">
+          <div class="flex items-center gap-10 mt-10 flex-wrap justify-center">
             <template
               v-for="item in sponsors.filter((x) => x.type !== 'sponsor')"
               :key="item.label"
