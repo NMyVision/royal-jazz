@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import Logo from './components/RoyalLogo.vue'
+import VimeoVideoPlayer from './components/VimeoVideoPlayer.vue'
 
 const activePosterIndex = ref(2)
 
@@ -55,7 +56,7 @@ const sponsors = [
     type: 'supporter',
     css: 'invert-100',
   },
-    {
+  {
     image: '/sponsors/trucore orange labs logo.png',
     label: 'Tru Core Laboratories',
     type: 'sponsor',
@@ -72,6 +73,24 @@ const sponsors = [
 const activePoster = computed(() => {
   return posters[activePosterIndex.value]
 })
+
+const videos = [
+  {
+    videoId: '1100358726',
+    hostId: 'bd030f237b',
+    title: 'Boney James Live at Royal Summer Jazz Series 2024',
+  },
+  {
+    videoId: '1100358814',
+    hostId: '8f893823e1',
+    title: 'Najee Live at Royal Summer Jazz Series 2024',
+  },
+  {
+    videoId: '1100358515',
+    hostId: 'f820459fec',
+    title: 'Dave Koz Live at Royal Summer Jazz Series 2024',
+  },
+]
 </script>
 
 <template>
@@ -160,12 +179,15 @@ const activePoster = computed(() => {
     </div>
   </div>
 
-  <div class="bg-black/10 clear-both mt-40 border  ">
+  <div class="bg-black/10 clear-both mt-40 border">
     <section class="max-w-screen-xl mx-auto bg-black/80 px-4 sm:px-10">
       <div class="md:grid grid-cols-1 items-center gap-4 sm:gap-10 py-10">
         <p class="text-center text-[#c39243] text-2xl">Join us for the last show of the series!</p>
-        <template v-for="{ flyer: image, label: alt, ticket } in posters.filter(x => x.flyer)" :key="image">
-          <div class="overflow-clip  mx-auto">
+        <template
+          v-for="{ flyer: image, label: alt, ticket } in posters.filter((x) => x.flyer)"
+          :key="image"
+        >
+          <div class="overflow-clip mx-auto">
             <a class="block" :href="ticket" target="_blank" rel="noopener">
               <img :src="image" :alt="alt" height="auto" width="675px" class="hover:scale-110" />
             </a>
@@ -180,6 +202,13 @@ const activePoster = computed(() => {
           >Buy Tickets</a
         >
       </div>
+
+      <div class="grid grid-cols-2 gap-8 mb-10">
+        <template v-for="v in videos" :key="v.videoId">
+          <VimeoVideoPlayer :videoId="v.videoId" :title="v.title" :hostId="v.hostId" />
+        </template>
+      </div>
+
       <a
         class="group block text-white relative overflow-clip mb-10"
         target="_blank"
