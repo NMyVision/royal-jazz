@@ -183,18 +183,20 @@ const videos = [
     <section class="max-w-screen-xl mx-auto bg-black/80 px-4 sm:px-10">
       <div class="md:grid grid-cols-1 items-center gap-4 sm:gap-10 py-10">
         <p class="text-center text-[#c39243] text-2xl">Join us for the last show of the series!</p>
-        <template
-          v-for="{ flyer: image, label: alt, ticket } in posters.filter((x) => x.flyer)"
-          :key="image"
-        >
-          <div class="overflow-clip mx-auto">
-            <a class="block" :href="ticket" target="_blank" rel="noopener">
-              <img :src="image" :alt="alt" height="auto" width="675px" class="hover:scale-110" />
-            </a>
-          </div>
-        </template>
+        <div class="grid grid-cols-2">
+          <template
+            v-for="{ flyer: image, label: alt, ticket } in posters.filter((x) => x.flyer)"
+            :key="image"
+          >
+            <div class="overflow-clip mx-auto">
+              <a class="block" :href="ticket" target="_blank" rel="noopener">
+                <img :src="image" :alt="alt" height="auto" width="675px" class="hover:scale-110" />
+              </a>
+            </div>
+          </template>
+          <VimeoVideoPlayer videoId="1107583666" title="Dave Koz" hostId="58479" autoPlay />
+        </div>
       </div>
-
       <div class="p-10 text-center">
         <a
           class="inline-block border-white/50 border-2 bg-[#b46a20] text-[#f1ed74]/90 py-4 px-8 uppercase font-medium rounded-full"
