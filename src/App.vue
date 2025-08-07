@@ -27,7 +27,7 @@ const posters = [
   },
   {
     label: 'Dave Koz & Friends',
-    date: '8.7.2025',
+    date: '8.28.2025',
     time: 'Thursday 7:30 PM',
     image: '/dave_koz-alpha.png',
     flyer: '/dave_koz.png',
@@ -184,7 +184,17 @@ const videos = [
       <div class="md:grid grid-cols-1 items-center gap-4 sm:gap-10 py-10">
         <p class="text-center text-[#c39243] text-2xl">Join us for the last show of the series!</p>
         <div class="grid grid-cols-2">
-          <template
+          <div class="text-2xl text-white space-y-4 h-80">
+
+            <p>
+              Due to the heavy rain we've been experiencing, the Dave Koz performance has been <span class="font-bold text-rose-600">moved to Thursday, August 28</span>. We want to be able to provide you with the best experience possible and a few extra days to dry out the venue will help us provide that for you. A full refund will be given to anyone who cannot make the new date.</p>
+
+              <p>
+
+                We apologize for the inconvenience, and we thank you for your continued support of The Amp Ballantyne and live music. We look forward to seeing you in a few weeks.
+              </p>
+            </div>
+          <!--<template
             v-for="{ flyer: image, label: alt, ticket } in posters.filter((x) => x.flyer)"
             :key="image"
           >
@@ -193,7 +203,7 @@ const videos = [
                 <img :src="image" :alt="alt" height="auto" width="675px" class="hover:scale-110" />
               </a>
             </div>
-          </template>
+          </template>-->
           <VimeoVideoPlayer videoId="1107583666" title="Dave Koz" hostId="58479" autoPlay />
         </div>
       </div>
