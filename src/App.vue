@@ -187,7 +187,7 @@ const videos = [
           <div class="text-2xl text-white space-y-4 h-80">
 
             <p>
-              Due to the heavy rain we've been experiencing, the Dave Koz performance has been <span class="font-bold text-rose-600">moved to Thursday, August 28</span>. We want to be able to provide you with the best experience possible and a few extra days to dry out the venue will help us provide that for you. A full refund will be given to anyone who cannot make the new date.</p>
+              Due to the heavy rain we've been experiencing, the Dave Koz performance has been <span class="font-bold text-rose-600">cancelled</span>. We want to be able to provide you with the best experience possible and a few extra days to dry out the venue will help us provide that for you. A full refund will be given to anyone who cannot make the new date.</p>
 
               <p>
 
