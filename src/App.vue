@@ -31,7 +31,7 @@ const videos = [
 
       <main class="space-y-6 text-zinc-800 dark:text-white/80 mt-10 leading-relaxed">
         <p>
-          <span class="text-zinc-950 dark:font-semibold text-white">
+          <span class="font-semibold text-zinc-950 dark:text-white">
             What an unforgettable summer! As the 2025 Royal Summer Jazz Series takes its final bow,
             we celebrate a season filled with incredible music, vibrant energy, and magical moments
             that brought the community together in style.
