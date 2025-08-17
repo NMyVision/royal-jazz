@@ -4,9 +4,7 @@ html, body, #app {
   height: 100%;
 }
 
-html {
-  background-color: black;
-}
+
 @theme {
   --font-title: "Dorsa", "sans-serif";
 }

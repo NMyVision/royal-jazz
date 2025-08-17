@@ -22,15 +22,16 @@ const videos = [
 </script>
 
 <template>
-  <div class="bg-cover min-h-full bg-[url(/1.jpg)] p-4 sm:p-10 md:p-20">
-    <div
-      class="bg-black/40 container py-8 p-4 sm:p-10 rounded-lg backdrop-blur-md border border-black max-w-[120ch] mx-auto"
-    >
-      <Logo class="size-40 fill-white/80" />
+  <div class="bg-cover min-h-full bg-[url(/1.jpg)] p-4 sm:p-10 md:p-20 relative">
 
-      <main class="space-y-6 text-white/80 mt-10 leading-relaxed">
+    <div
+      class="bg-white/90 dark:bg-black/40 container py-8 p-4 sm:p-10 rounded-lg backdrop-blur-md border border-black max-w-[120ch] mx-auto"
+    >
+      <Logo class="size-40  dark:fill-white/80" />
+
+      <main class="space-y-6 text-zinc-800 dark:text-white/80 mt-10 leading-relaxed">
         <p>
-          <span class="font-semibold text-white">
+          <span class="text-zinc-950 dark:font-semibold text-white">
             What an unforgettable summer! As the 2025 Royal Summer Jazz Series takes its final bow,
             we celebrate a season filled with incredible music, vibrant energy, and magical moments
             that brought the community together in style.
@@ -53,26 +54,26 @@ const videos = [
         <p>
           To our valued sponsors and partners—
 
-          <span class="font-semibold text-white">
+          <span class="font-semibold text-zinc-950 dark:text-white">
             TruCore Labs, Aloft Ballantyne Hotel, New York Life, Beasley Media Group, and
             Lowe's</span
           >—we are beyond grateful for your investment in the arts and your role in helping us bring
           this vision to life. A special thank-you to the
-          <span class="font-semibold text-white">incredible volunteers from Bank of America</span>,
+          <span class="font-semibold text-zinc-950 dark:text-white">incredible volunteers from Bank of America</span>,
           whose energy, professionalism, and generosity helped create a welcoming and seamless
           experience for our guests.
         </p>
 
         <p>
           We also extend our
-          <span class="font-semibold text-white"
+          <span class="font-semibold text-zinc-950 dark:text-white"
             >deepest appreciation to the Charlotte Area Fund</span
           >
           for their continued support of cultural engagement and community advancement.
         </p>
 
         <p>
-          And to <span class="font-semibold text-white">Positively Charlotte</span>, thank you for
+          And to <span class="font-semibold text-zinc-950 dark:text-white">Positively Charlotte</span>, thank you for
           capturing the heart of the series through your live coverage and behind-the-scenes
           storytelling—your presence helped share the magic with an even wider audience.
         </p>
@@ -96,14 +97,14 @@ const videos = [
         </p>
 
         <p>
-          <span class="font-semibold text-white"
+          <span class="font-semibold text-zinc-950 dark:text-white"
             >Until then, Stay smooth. Stay soulful. Stay <i >Royal</i>.</span
           >
         </p>
       </main>
 
       <article class="mt-20">
-        <h3 class="font-light text-4xl/20 text-white">Recap Videos</h3>
+        <h3 class="font-light text-4xl/20 text-zinc-950 dark:text-white">Recap Videos</h3>
 
         <div class="grid grid-cols-2 gap-8 mb-10">
           <template v-for="v in videos" :key="v.videoId">
